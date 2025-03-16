@@ -1,12 +1,11 @@
-% This version is incorrect.
 % recursion2503d
 % https://docs.google.com/document/d/1oQ-6Bvwvsbtni_45w8XkP_meVeKefKWGYdoiycxPUTI/edit?tab=t.0
 % !TEX encoding = UTF-8 Unicode
-% https://www.site24x7.com/tools/time-stamp-converter.html 1742157341
+% https://www.site24x7.com/tools/time-stamp-converter.html 1742165668
 \documentclass[12pt,letterpaper]{article}
 \usepackage{fancyhdr}
 \fancyhf{}
-\fancyfoot[R]{{\tiny recursion2503d,\ \filemodprintdate{\jobname},\ \filemodprinttime{\jobname},\ 1742157341}} % https://www.site24x7.com/tools/time-stamp-converter.html (https://www.unixtimestamp.com/ bad)
+\fancyfoot[R]{{\tiny recursion2503d,\ \filemodprintdate{\jobname},\ \filemodprinttime{\jobname},\ 1742165668}} % https://www.site24x7.com/tools/time-stamp-converter.html (https://www.unixtimestamp.com/ bad)
 \renewcommand{\headrulewidth}{0pt}
 \fancyfoot[C]{\thepage}
 \usepackage[T1]{fontenc}
@@ -66,6 +65,14 @@ Recall that a poset $X$ is \textbf{artinian} if each nonempty finite subset of $
 
 The proofs are almost the same as in the well-ordered case. Let me just spell out the part where I wrote ``If $x<z<y$ for some $z$ we set $f_y(x):=f_z(x)$ and the Lemma shows that this does not depend on the choice of $z$''. Assume $x<z<y$ and $x<z'<y$. Then, by the Lemma, $f_z$ and $f_{z'}$ coincide on the artinian poset $X_z\cap X_{z'}$ (even if $z$ and $z'$ are not comparable), and we get $f_z(y)=f_{z'}(y)$, as required. 
 
-Note that there is a natural way of attaching an ordinal $f(x)$ to each element $x$ of an artinian poset $X$. More precisely, $f(x)$ is defined by artinian recursion as follows. If $x$ is minimal, set $f(x)=0$. Suppose $x$ is not minimal, and assume, as we can by the Artinian Recursion Theorem, that $f(y)$ is defined for all $y<x$. If $X_x$ has a largest element $y$, set $f(x)=f(y)+1$. If $X_x$ has no largest element, let $f(x)$ be the sup of $f(X_x)$. (Observe that $f(X)$ is the set of all those ordinals which are less than a given ordinal.) 
+Note that there is a natural way of attaching an ordinal $f(x)$ to each element $x$ of an artinian poset $X$. More precisely, $f(x)$ is defined by artinian recursion as follows. If $x$ is minimal, set $f(x)=0$. Suppose $x$ is not minimal, assume, as we can by the Artinian Recursion Theorem, that $f(y)$ is defined for all $y<x$, and set %Set $\alpha=\sup f(X_x)$. If $\alpha\in f(X_x)$, put $f(x)=\alpha+1$. If $\alpha\notin f(X_x)$, put $f(x)=\alpha$. 
+$$
+f(x)=
+\begin{cases}
+\sup f(X_x)+1&\text{if }\sup f(X_x)\in f(X_x)\\ \\ 
+\sup f(X_x)&\text{if }\sup f(X_x)\notin f(X_x).
+\end{cases}
+$$ 
+(Observe that $f(X)$ is the set of all those ordinals which are less than a given ordinal.) 
 
 \end{document}
