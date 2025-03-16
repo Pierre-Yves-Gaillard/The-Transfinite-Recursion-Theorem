@@ -1,0 +1,68 @@
+% recursion2503d
+% https://docs.google.com/document/d/1oQ-6Bvwvsbtni_45w8XkP_meVeKefKWGYdoiycxPUTI/edit?tab=t.0
+% !TEX encoding = UTF-8 Unicode
+% https://www.site24x7.com/tools/time-stamp-converter.html 1742149894
+\documentclass[12pt,letterpaper]{article}
+\usepackage{fancyhdr}
+\fancyhf{}
+\fancyfoot[R]{{\tiny recursion2503d,\ \filemodprintdate{\jobname},\ \filemodprinttime{\jobname},\ 1742149894}} % https://www.site24x7.com/tools/time-stamp-converter.html (https://www.unixtimestamp.com/ bad)
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\thepage}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb,amsmath,amsthm} 
+%\usepackage[letterpaper,top=30pt,left=40pt,right=40pt,bottom=60pt]{geometry}
+\usepackage[letterpaper,top=40pt,left=60pt,right=60pt,bottom=80pt]{geometry}
+\usepackage{filemod}%https://stackoverflow.com/questions/2118972/latex-command-for-last-modified
+\usepackage{microtype}
+%\usepackage{tikz-cd}\usepackage{varwidth}\usepackage{comment}
+\usepackage[pdfusetitle]{hyperref}
+%\usepackage{marvosym}% emoji https://tex.stackexchange.com/questions/3695/smileys-in-latex https://ctan.org/pkg/marvosym?lang=en
+\pagestyle{fancy}
+%\pagestyle{empty}
+%\setlength\parindent{0pt}
+\setlength{\parskip}{5pt} % variable
+%\renewcommand{\baselinestretch}{1.1} % variable
+\newcommand{\nn}{\noindent}
+\begin{document}% \tiny \scriptsize \footnotesize \small \normalsize \large \Large \LARGE \huge \Huge 
+\begin{center}
+{\Huge Transfinite Recursion}\bigskip 
+
+{\normalsize Pierre-Yves Gaillard}
+\end{center}
+
+\nn The only purpose of this short text\footnote{available at \url{https://github.com/Pierre-Yves-Gaillard/The-Transfinite-Recursion-Theorem}} is to point out that the Transfinite Recursion Theorem is a particular case of the Transfinite Induction Theorem (and that these theorems generalize immediately from the well-order setting to the artinian setting). 
+
+For any member $x$ of any ordered set $X$, we denote by $X_x$ the set of all those $y$ which are less than $x$, that is $X_x=\{y\in X\ |\ y<x\}$. 
+
+Say that a subset $S$ of an ordered set $X$ is \textbf{inductive} if, for all $x$ in $X$, the condition $X_x\subset S$ implies $x\in S$. 
+
+\nn\textbf{Transfinite Induction Theorem.} Let $S$ be a subset of a well-ordered set $X$. Then $S=X$ if and only if $S$ is inductive. 
+
+\nn\emph{Proof.} If $S=X$, then $S$ is trivially inductive. If $S\subsetneqq X$, let $x$ be the least element of $X\setminus S$, and note that $S$ is not inductive because we have $X_x\subset S$ but $x\notin S$. $\square$
+
+\nn\textbf{Transfinite Recursion Theorem.} Let $X$ be well-ordered, let $A$ be a set, and, for all $x$ in $X$, let $A^{X_x}$ be the set of all maps from $X_x$ to $A$. Finally, for all $x$ in $X$, let $r_x:A^{X_x}\to A$ be a map. Then there is a unique map $f:X\to A$ such that $f(x)=r_x(f|X_x)$ for all $x$ in $X$. Here $f|X_x$ denotes the restriction of $f$ to $X_x$. 
+
+\nn\textbf{Lemma.} The map $f$ in the above theorem is unique. 
+
+\nn\emph{Proof.} Let $f$ and $g$ be two maps from $X$ to $A$ satisfying the required conditions. It is easy to see that $\{x\in X\ |\ f(x)=g(x)\}$ is inductive. $\square$ 
+
+\nn\emph{Proof of the Transfinite Recursion Theorem.} Let $\omega$ satisfy $\omega\notin X$, set $Y:=X\cup\{\omega\}$, and equip $Y$ with the unique order such that $\omega>x$ for all $x$ in $X$ and the order of $X$ is induced by that of $Y$. Then $Y$ is again well-ordered, and $X=Y_\omega$. We define the subset $T$ of $Y$ as follows. Let $y$ be in $Y$. Then $y$ is in $T$ if and only if there is a map $f_y:Y_y\to A$ such that $f_y(x)=r_x(f_y|X_x)$ for all $x$ in $Y_y$. By the Lemma, there is at most one such map $f_y$. 
+
+\nn Claim: $T$ is inductive. Proof. Let $y$ be in $Y$. We can assume that the $f_x$ for $x<y$ have already been defined, and we must define $f_y$, that is, we must define $f_y(x)$ for $x<y$. If $x<z<y$ for some $z$ we set $f_y(x):=f_z(x)$ and the Lemma shows that this does not depend on the choice of $z$. If there is no such $z$, we set $f_y(x):=r_x(f_x)$. It is easy to check that $f_y$ meets our requirements. 
+
+By the Transfinite Recursion Theorem, this implies that $f_\omega$ exists, and it is clear that $f:=f_\omega$ does the job. $\square$ 
+
+Here is a mild generalization. %(The proofs are almost the same, and the details left to the reader.) 
+
+Recall that a poset $X$ is \textbf{artinian} if each nonempty finite subset of $X$ has a minimal element. If $x$ is an element of a poset $X$, we define $X_x$ as above, and, if $S$ is a subset of $X$, we define the condition that $S$ is \textbf{inductive} as above. 
+
+%Say that a subset $S$ of an artinian poset $X$ is \textbf{inductive} if, for all $x$ in $X$, the condition $X_x\subset S$ implies $x\in S$. 
+
+\nn\textbf{Artinian Induction Theorem.} Let $S$ be a subset of an artinian poset $X$. Then $S=X$ if and only if $S$ is inductive. \pagebreak 
+
+\nn\textbf{Artinian Recursion Theorem.} Let $X$ be an artinian poset, let $A$ be a set, and, for all $x$ in $X$, let $A^{X_x}$ be the set of all maps from $X_x$ to $A$. Finally, for all $x$ in $X$, let $r_x:A^{X_x}\to A$ be a map. Then there is a unique map $f:X\to A$ such that $f(x)=r_x(f|X_x)$ for all $x$ in $X$. Here $f|X_x$ denotes the restriction of $f$ to $X_x$. 
+
+The proofs are almost the same as in the well-ordered case. Let me just spell out the part where I wrote ``If $x<z<y$ for some $z$ we set $f_y(x):=f_z(x)$ and the Lemma shows that this does not depend on the choice of $z$''. Assume $x<z<y$ and $x<z'<y$. Then, by the Lemma, $f_z$ and $f_{z'}$ coincide on the artinian poset $X_z\cap X_{z'}$ (even if $z$ and $z'$ are not comparable), and we get $f_z(y)=f_{z'}(y)$, as required. 
+
+\end{document}
