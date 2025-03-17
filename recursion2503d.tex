@@ -1,11 +1,11 @@
 % recursion2503d
 % https://docs.google.com/document/d/1oQ-6Bvwvsbtni_45w8XkP_meVeKefKWGYdoiycxPUTI/edit?tab=t.0
 % !TEX encoding = UTF-8 Unicode
-% https://www.site24x7.com/tools/time-stamp-converter.html 1742207503
+% https://www.site24x7.com/tools/time-stamp-converter.html 1742239748
 \documentclass[12pt,letterpaper]{article}
 \usepackage{fancyhdr}
 \fancyhf{}
-\fancyfoot[R]{{\tiny recursion2503d,\ \filemodprintdate{\jobname},\ \filemodprinttime{\jobname},\ 1742207503}} % https://www.site24x7.com/tools/time-stamp-converter.html (https://www.unixtimestamp.com/ bad)
+\fancyfoot[R]{{\tiny recursion2503d,\ \filemodprintdate{\jobname},\ \filemodprinttime{\jobname},\ 1742239748}} % https://www.site24x7.com/tools/time-stamp-converter.html (https://www.unixtimestamp.com/ bad)
 \renewcommand{\headrulewidth}{0pt}
 \fancyfoot[C]{\thepage}
 \usepackage[T1]{fontenc}
@@ -64,6 +64,8 @@ Recall that a poset $X$ is \textbf{artinian} if each nonempty finite subset of $
 \nn\textbf{Artinian Recursion Theorem.} Let $X$ be an artinian poset, let $A$ be a set, and, for all $x$ in $X$, let $A^{X_x}$ be the set of all maps from $X_x$ to $A$. Finally, for all $x$ in $X$, let $r_x:A^{X_x}\to A$ be a map. Then there is a unique map $f:X\to A$ such that $f(x)=r_x(f|X_x)$ for all $x$ in $X$. Here $f|X_x$ denotes the restriction of $f$ to $X_x$. 
 
 The proofs are almost the same as in the well-ordered case. Let me just spell out the part where I wrote ``If $x<z<y$ for some $z$ we set $f_y(x):=f_z(x)$ and the Lemma shows that this does not depend on the choice of $z$''. Assume $x<z<y$ and $x<z'<y$. Then, by the Lemma, $f_z$ and $f_{z'}$ coincide on the artinian poset $X_z\cap X_{z'}$ (even if $z$ and $z'$ are not comparable), and we get $f_z(y)=f_{z'}(y)$, as required. 
+
+\end{document}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 I suspect that the following statement is true, but I haven't been able to prove it so far: 
 
