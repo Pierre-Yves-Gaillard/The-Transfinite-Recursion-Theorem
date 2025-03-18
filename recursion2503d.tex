@@ -1,11 +1,11 @@
 % recursion2503d
 % https://docs.google.com/document/d/1oQ-6Bvwvsbtni_45w8XkP_meVeKefKWGYdoiycxPUTI/edit?tab=t.0
 % !TEX encoding = UTF-8 Unicode
-% https://www.site24x7.com/tools/time-stamp-converter.html 1742239748
+% https://www.site24x7.com/tools/time-stamp-converter.html 1742294993
 \documentclass[12pt,letterpaper]{article}
 \usepackage{fancyhdr}
 \fancyhf{}
-\fancyfoot[R]{{\tiny recursion2503d,\ \filemodprintdate{\jobname},\ \filemodprinttime{\jobname},\ 1742239748}} % https://www.site24x7.com/tools/time-stamp-converter.html (https://www.unixtimestamp.com/ bad)
+\fancyfoot[R]{{\tiny recursion2503d,\ \filemodprintdate{\jobname},\ \filemodprinttime{\jobname},\ 1742294993}} % https://www.site24x7.com/tools/time-stamp-converter.html (https://www.unixtimestamp.com/ bad)
 \renewcommand{\headrulewidth}{0pt}
 \fancyfoot[C]{\thepage}
 \usepackage[T1]{fontenc}
@@ -31,7 +31,7 @@
 {\normalsize Pierre-Yves Gaillard}
 \end{center}
 
-\nn The only purpose of this short text\footnote{available at \url{https://github.com/Pierre-Yves-Gaillard/The-Transfinite-Recursion-Theorem}} is to point out that the Transfinite Recursion Theorem is a particular case of the Transfinite Induction Theorem (and that these theorems generalize immediately from the well-order setting to the artinian setting). 
+\nn The only purpose of this short text\footnote{This text is available at\\ \url{https://github.com/Pierre-Yves-Gaillard/The-Transfinite-Recursion-Theorem}. Here is a related text: \url{https://github.com/Pierre-Yves-Gaillard/Artin-poset-to-ordinals}.} is to point out that the Transfinite Recursion Theorem is a particular case of the Transfinite Induction Theorem (and that these theorems generalize immediately from the well-order setting to the artinian setting). 
 
 For any element $x$ of any ordered set $X$, we denote by $X_x$ the set of all those $y$ which are less than $x$, that is $X_x=\{y\in X\ |\ y<x\}$. 
 
@@ -59,7 +59,7 @@ Recall that a poset $X$ is \textbf{artinian} if each nonempty finite subset of $
 
 %Say that a subset $S$ of an artinian poset $X$ is \textbf{inductive} if, for all $x$ in $X$, the condition $X_x\subset S$ implies $x\in S$. 
 
-\nn\textbf{Artinian Induction Theorem.} Let $S$ be a subset of an artinian poset $X$. Then $S=X$ if and only if $S$ is inductive. \pagebreak 
+\nn\textbf{Artinian Induction Theorem.} Let $S$ be a subset of an artinian poset $X$. Then $S=X$ if and only if $S$ is inductive. %\pagebreak 
 
 \nn\textbf{Artinian Recursion Theorem.} Let $X$ be an artinian poset, let $A$ be a set, and, for all $x$ in $X$, let $A^{X_x}$ be the set of all maps from $X_x$ to $A$. Finally, for all $x$ in $X$, let $r_x:A^{X_x}\to A$ be a map. Then there is a unique map $f:X\to A$ such that $f(x)=r_x(f|X_x)$ for all $x$ in $X$. Here $f|X_x$ denotes the restriction of $f$ to $X_x$. 
 
